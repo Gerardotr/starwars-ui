@@ -11,6 +11,7 @@ export class FilmsComponent {
   page: number = 1;
   itemsPerPage: number = 10;
   totalPages: number = 1;
+  searchText: string = '';
 
   constructor(private swService: StarWarsService) {}
 
@@ -28,10 +29,11 @@ export class FilmsComponent {
   }
 
   filterFilms(searchText: string) {
+    this.searchText = searchText;
     if (!searchText) {
       this.filteredFilms = this.films;
     } else {
-      const lowerSearchText = searchText.toLowerCase();
+      const lowerSearchText = this.searchText.toLowerCase();
       this.filteredFilms = this.films.filter(film => 
         film.title.toLowerCase().includes(lowerSearchText) || 
         film.opening_crawl.toLowerCase().includes(lowerSearchText)
@@ -48,4 +50,5 @@ export class FilmsComponent {
     this.page = newPage;
     this.updateFilteredFilms();
   }
+
  }

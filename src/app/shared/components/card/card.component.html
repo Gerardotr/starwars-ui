@@ -4,7 +4,9 @@
     <span *ngIf="(isFavorite$ | async) === true">★</span>
   </button>
 
-  <div class="card-header border-none text-center display-6">🛸</div>
+  <div class="card-header border-none text-center display-6">
+    {{ showFavorite ? "🎬" : "👤" }}
+  </div>
 
   <div class="card-body text-center">
     <h5 class="card-title">{{ title }}</h5>
