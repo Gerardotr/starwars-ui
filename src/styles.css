@@ -1,1 +1,199 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");
+
+:root {
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --primary-color: #ebe8db;
+  --secondary-color: #d6d2c4;
+  --accent-color: #b8b4a8;
+  --dark-color: #212529;
+  --light-color: #f8f6f0;
+
+  --text-color: #333;
+  --background-color: var(--light-color);
+  --border-color: var(--secondary-color);
+
+  --box-shadow-input: inset 4px 4px 8px var(--accent-color), inset -4px -4px 8px white;
+  --box-shadow-container: 1px 1px 5px var(--accent-color), -8px -8px 16px white;
+  --box-shadow-clear: 1px 1px 5px var(--accent-color), -8px -8px 16px white;
+  --box-shadow-card:  1px 1px 5px var(--accent-color),  -8px -8px 16px white;
+  --box-shadow-btn-link: 4px 4px 8px var( --accent-color), -4px -4px 8px white;
+
+  --box-shadow-loading: 8px 8px 16px var(--accent-color), -8px -8px 16px white;
+}
+
+body.dark-theme {
+  --primary-color: #333;
+  --secondary-color: #444;
+  --accent-color: #777;
+  --dark-color: #f8f6f0;
+  --light-color: #212529;
+  --text-color: #ddd;
+  --background-color: #121212;
+  --border-color: #666;
+  --box-shadow-input: inset 4px 4px 8px #111, inset -4px -4px 8px #333;
+  --box-shadow-container: 1px 1px 5px #0a0a0a, -8px -8px 16px #1a1a1a;
+  --box-shadow-clear: 1px 1px 5px #222, -8px -8px 16px #444;
+
+  --box-shadow-card: 1px 1px 5px #0a0a0a, -8px -8px 16px #1a1a1a;
+
+  --box-shadow-btn-link: 4px 4px 8px #111, -4px -4px 8px #333;
+
+  --box-shadow-loading: 8px 8px 16px var(--accent-color), -8px -8px 16px #1a1a1a;
+
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color) !important;
+}
+
+p,
+span,
+li,
+a,
+label,
+input,
+textarea,
+select,
+button {
+  color: var(--text-color) !important;
+}
+
+a {
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: var(--dark-color);
+}
+
+input,
+textarea,
+select {
+  background-color: var(--light-color);
+  border: 1px solid var(--border-color);
+  padding: 5px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--dark-color);
+  outline: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border-color);
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+}
+
+th {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+td {
+  background-color: var(--light-color);
+}
+
+.text-primary {
+  color: var(--primary-color);
+}
+.text-secondary {
+  color: var(--secondary-color);
+}
+.text-accent {
+  color: var(--accent-color);
+}
+.text-dark {
+  color: var(--dark-color);
+}
+.text-light {
+  color: var(--light-color);
+}
+
+
+.ngx-toastr {
+  border-radius: 12px;
+  padding: 15px;
+  min-width: 280px;
+  font-weight: bold;
+  box-shadow: 6px 6px 12px #b8b8b8, -6px -6px 12px #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.neumorphic-toastr.toast-success {
+  background: #e0ffe0 !important;
+  color: #2d862d !important;
+  border: 1px solid #a0ffa0 !important;
+}
+
+.neumorphic-toastr.toast-error {
+  background: #ffe0e0 !important;
+  color: #862d2d !important;
+  border: 1px solid #ffa0a0 !important;
+}
+
+.neumorphic-toastr.toast-info {
+  background: #e0f7ff !important;
+  color: #007bff !important;
+  border: 1px solid #a0e0ff !important;
+}
+
+.neumorphic-toastr.toast-warning {
+  background: #fff3cd !important;
+  color: #856404 !important;
+  border: 1px solid #ffeeba !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.neumorphic-toastr {
+  animation: fadeIn 0.3s ease-in-out;
+}
+

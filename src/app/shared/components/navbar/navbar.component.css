@@ -1,0 +1,45 @@
+.neumorphic-link {
+  background: var(--ligth-color);
+  padding: 5px 20px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-btn-link);
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  color: var(--dark-color);
+  font-weight: bold;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.neumorphic-link:hover {
+  background: var(--secondary-color);
+  box-shadow: inset 4px 4px 8px #b8b8b8, inset -4px -4px 8px #ffffff;
+  color: var(--dark-color);
+}
+
+.neumorphic-link.active {
+  background: var(--accent-color);
+  box-shadow: inset 4px 4px 8px #999, inset -4px -4px 8px #ffffff;
+  color: var(--dark-color);
+}
+
+body.dark-theme .neumorphic-link {
+  background: var(--dark-color);
+  box-shadow: var(--box-shadow-btn-link);;
+  color: var(--light-color);
+}
+
+body.dark-theme .neumorphic-link:hover {
+  background: var(--secondary-color);
+  box-shadow: inset 4px 4px 8px #111, inset -4px -4px 8px #333;
+  color: var(--dark-color);
+}
+
+body.dark-theme .neumorphic-link.active {
+  background: var(--accent-color);
+  box-shadow: inset 4px 4px 8px #444, inset -4px -4px 8px #666;
+  color: var(--light-color);
+}
+
+

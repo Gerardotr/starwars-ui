@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-">Films</h2>
+  <app-filter (filterText)="filterFilms($event)"></app-filter>
+  <div class="row mb-4">
+    <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let film of filteredFilms">
+      <app-card
+        [showFavorite]="true"
+        [title]="film.title"
+        [description]="film.opening_crawl"
+      ></app-card>
+    </div>
+  </div>
+  <app-pagination
+    [page]="page"
+    [totalPages]="totalPages"
+    (changePage)="changePage($event)"
+  >
+  </app-pagination>
+</div>

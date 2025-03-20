@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Characters</h2>
+  <div class="mb-4">
+    <app-filter (filterText)="filterCharacters($event)"></app-filter>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let character of filteredCharacters">
+      <app-card
+        [showFavorite]="false"
+        [title]="character.name"
+        [description]="
+          'Height: ' + character.height + 'cm, Mass: ' + character.mass + 'kg'
+        "
+      ></app-card>
+    </div>
+  </div>
+  <app-pagination
+    [page]="page"
+    [totalPages]="totalPages"
+    (changePage)="changePage($event)"
+  >
+  </app-pagination>
+</div>

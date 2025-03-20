@@ -1,0 +1,23 @@
+<div class="card neumorphic-card mb-3" [ngClass]="{ expanded: expanded }">
+  <button *ngIf="showFavorite" class="favorite-btn" (click)="toggleFavorite()">
+    <span *ngIf="(isFavorite$ | async) === false">☆</span>
+    <span *ngIf="(isFavorite$ | async) === true">★</span>
+  </button>
+
+  <div class="card-header border-none text-center display-6">🛸</div>
+
+  <div class="card-body text-center">
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text" [ngClass]="{ truncate: !expanded }">
+      {{ description }}
+    </p>
+
+    <button
+      *ngIf="isLongText"
+      class="btn btn-secondary mt-2"
+      (click)="toggleExpand()"
+    >
+      {{ expanded ? "Less" : "More" }}
+    </button>
+  </div>
+</div>
