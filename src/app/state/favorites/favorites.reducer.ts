@@ -13,12 +13,12 @@ export const favoritesReducer = createReducer(
   initialState,
   on(addFavorite, (state, { item }) => ({
     ...state,
-    favorites: state.favorites.some(fav => fav.title === item.title || fav.name === item.name)
+    favorites: state.favorites.some(fav => fav.title === item.title)
       ? state.favorites
       : [...state.favorites, item]
   })),
   on(removeFavorite, (state, { item }) => ({
     ...state,
-    favorites: state.favorites.filter(fav => fav.title !== item.title && fav.name !== item.name)
+    favorites: state.favorites.filter(fav => fav.title !== item.title)
   }))
 );
