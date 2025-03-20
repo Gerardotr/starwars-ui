@@ -2,9 +2,35 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
 
+## Technologies Used
+- **Angular** - Frontend framework
+- **NgRx** - State management for handling favorites
+- **Interceptor** - Implemented to manage loading states
+- **CSS** - Styling and theming
+- **Bootstrap** - UI components for a modern and responsive design
+
+## Features Implemented
+### 1. **State Management with NgRx**
+   - Integrated NgRx for efficient state management, specifically for handling favorite items.
+   - Implemented actions, reducers, and effects for managing state updates asynchronously.
+
+### 2. **HTTP Interceptor for Loading State**
+   - Created a custom HTTP interceptor to manage and display loading indicators during API requests.
+   - Ensured a smooth user experience by handling global request states effectively.
+
+### 3. **Project Structure & Best Practices**
+   - Organized the project using best practices for maintainability and scalability.
+   - Structured modules and components efficiently to follow Angular guidelines.
+
+### 4. **Attractive UI/UX Design**
+   - Implemented a modern and responsive design for an improved user experience.
+   - Used Angular Material and custom SCSS to enhance aesthetics and usability.
+
+
 ## Run the following command for init this project
 
 `npm install --legacy-peer-deps`
+
 
 ## Development server
 
