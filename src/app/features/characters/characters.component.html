@@ -4,7 +4,7 @@
     <app-filter (filterText)="filterCharacters($event)"></app-filter>
   </div>
 
-  <div class="row">
+  <div class="row" *ngIf="filteredCharacters.length > 0; else noData">
     <div class="col-md-4" *ngFor="let character of filteredCharacters">
       <app-card
         [showFavorite]="false"
@@ -15,7 +15,15 @@
       ></app-card>
     </div>
   </div>
+  <ng-template #noData>
+    <div class="no-data-c">
+      <div class="no-data-card">
+        <p>🚀 No data available</p>
+      </div>
+    </div>
+  </ng-template>
   <app-pagination
+    *ngIf="filteredCharacters.length > 0"
     [page]="page"
     [totalPages]="totalPages"
     (changePage)="changePage($event)"

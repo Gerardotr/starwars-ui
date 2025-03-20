@@ -13,11 +13,12 @@
   --background-color: var(--light-color);
   --border-color: var(--secondary-color);
 
-  --box-shadow-input: inset 4px 4px 8px var(--accent-color), inset -4px -4px 8px white;
+  --box-shadow-input: inset 4px 4px 8px var(--accent-color),
+    inset -4px -4px 8px white;
   --box-shadow-container: 1px 1px 5px var(--accent-color), -8px -8px 16px white;
   --box-shadow-clear: 1px 1px 5px var(--accent-color), -8px -8px 16px white;
-  --box-shadow-card:  1px 1px 5px var(--accent-color),  -8px -8px 16px white;
-  --box-shadow-btn-link: 4px 4px 8px var( --accent-color), -4px -4px 8px white;
+  --box-shadow-card: 1px 1px 5px var(--accent-color), -8px -8px 16px white;
+  --box-shadow-btn-link: 4px 4px 8px var(--accent-color), -4px -4px 8px white;
 
   --box-shadow-loading: 8px 8px 16px var(--accent-color), -8px -8px 16px white;
 }
@@ -40,7 +41,6 @@ body.dark-theme {
   --box-shadow-btn-link: 4px 4px 8px #111, -4px -4px 8px #333;
 
   --box-shadow-loading: 8px 8px 16px var(--accent-color), -8px -8px 16px #1a1a1a;
-
 }
 
 body {
@@ -148,7 +148,6 @@ td {
   color: var(--light-color);
 }
 
-
 .ngx-toastr {
   border-radius: 12px;
   padding: 15px;
@@ -197,3 +196,26 @@ td {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+.no-data-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.no-data-card {
+  background: var(--primary-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 6px 6px 12px #b8b8b8, -6px -6px 12px #ffffff;
+  text-align: center;
+  font-weight: bold;
+  color: #555;
+  font-size: 1.2rem;
+  min-width: 450px;
+}
+
+.no-data-card p {
+  margin: 0;
+  padding: 10px;
+}
