@@ -10,6 +10,10 @@ import { Store } from '@ngrx/store';
 import { map, Observable, take } from 'rxjs';
 import { selectFavorites } from '../../../state/favorites/favorites.selectors';
 import { NotificationService } from '../../../core/services/notification.service';
+import {
+  addFavorite,
+  removeFavorite,
+} from '../../../state/favorites/favorites.actions';
 
 @Component({
   selector: 'app-card',
@@ -27,7 +31,10 @@ export class CardComponent implements OnInit {
   expanded = false;
   isLongText = false;
 
-  constructor(private store: Store, private notificationService: NotificationService) {
+  constructor(
+    private store: Store,
+    private notificationService: NotificationService
+  ) {
     this.isFavorite$ = this.store
       .select(selectFavorites)
       .pipe(
@@ -40,7 +47,7 @@ export class CardComponent implements OnInit {
   }
 
   checkTextLength() {
-    this.isLongText = this.description.length > 100; // Ajusta el número de caracteres
+    this.isLongText = this.description.length > 100;
   }
 
   toggleExpand() {
@@ -49,18 +56,18 @@ export class CardComponent implements OnInit {
 
   toggleFavorite() {
     const item = { title: this.title, description: this.description };
-
-    this.store.select(selectFavorites).pipe(take(1)).subscribe((favorites) => { 
-      if (favorites.some((fav) => fav.title === item.title)) {
-        this.store.dispatch({ type: '[Favorites] Remove Favorite', item });
-        this.notificationService.showError(`removed from favorites`, '');
-
-      } else {
-        this.store.dispatch({ type: '[Favorites] Add Favorite', item });
-        this.notificationService.showSuccess(`added to favorites`, '');
-
-      }
-    });
+    this.store
+      .select(selectFavorites)
+      .pipe(take(1))
+      .subscribe((favorites) => {
+        const isFavorite = favorites.some((fav) => fav.title === item.title);
+        if (isFavorite) {
+          this.store.dispatch(removeFavorite({ item }));
+          this.notificationService.showError(`added to favorites`, '');
+        } else {
+          this.store.dispatch(addFavorite({ item }));
+          this.notificationService.showSuccess(`added to favorites`, '');
+        }
+      });
   }
-
 }
