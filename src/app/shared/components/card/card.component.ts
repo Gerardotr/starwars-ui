@@ -63,7 +63,7 @@ export class CardComponent implements OnInit {
         const isFavorite = favorites.some((fav) => fav.title === item.title);
         if (isFavorite) {
           this.store.dispatch(removeFavorite({ item }));
-          this.notificationService.showError(`added to favorites`, '');
+          this.notificationService.showError(`removed to favorites`, '');
         } else {
           this.store.dispatch(addFavorite({ item }));
           this.notificationService.showSuccess(`added to favorites`, '');

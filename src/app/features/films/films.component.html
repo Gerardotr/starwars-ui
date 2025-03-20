@@ -1,7 +1,7 @@
 <div class="container mt-4">
   <h2 class="text-center mb-4">Films</h2>
   <app-filter (filterText)="filterFilms($event)"></app-filter>
-  <div class="row mb-4">
+  <div class="row mb-4" *ngIf="filteredFilms.length > 0; else noData">
     <div class="col-sm-12 col-md-6 col-lg-4" *ngFor="let film of filteredFilms">
       <app-card
         [showFavorite]="true"
@@ -10,7 +10,15 @@
       ></app-card>
     </div>
   </div>
+  <ng-template #noData>
+    <div class="no-data-c">
+      <div class="no-data-card">
+        <p>🚀 No data available</p>
+      </div>
+    </div>
+  </ng-template>
   <app-pagination
+    *ngIf="filteredFilms.length > 0"
     [page]="page"
     [totalPages]="totalPages"
     (changePage)="changePage($event)"
